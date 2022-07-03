@@ -1,10 +1,12 @@
 package xik.ShoppingMall.Repository;
 
 import org.junit.jupiter.api.AfterEach;
+import org.springframework.stereotype.Repository;
 import xik.ShoppingMall.Domain.Member;
 
 import java.util.*;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>(); // 임시 저장히기위한 변수
