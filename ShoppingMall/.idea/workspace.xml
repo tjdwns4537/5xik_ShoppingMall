@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae6557bc-483b-4881-9eea-f905d3d5c57b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Login/memberCheck.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JDBCMemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -15,28 +18,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/xik/ShoppingMall/Controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/xik/ShoppingMall/Controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/xik/ShoppingMall/Controller/MemberForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/xik/ShoppingMall/Controller/MemberForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/xik/ShoppingMall/Repository/MemoryMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/xik/ShoppingMall/Repository/MemoryMemberRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/xik/ShoppingMall/Service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/xik/ShoppingMall/Service/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/xik/ShoppingMall/Service/MemberServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/xik/ShoppingMall/Service/MemberServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/xik.ShoppingMall.Service.MemberServiceTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/xik.ShoppingMall.Service.MemberServiceTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/xik.ShoppingMall.Service.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/xik.ShoppingMall.Service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/Login/memberNew.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/Login/memberNew.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/Main/5xik.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/Main/5xik.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-xik.ShoppingMall.Service.MemberServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-xik.ShoppingMall.Service.MemberServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemoryMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemoryMemberRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Login/memberNew.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Login/memberNew.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Main/5xik.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Main/5xik.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../회의록.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +74,8 @@
         <option value="CSS File" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -295,6 +284,7 @@
       <workItem from="1656764931643" duration="3125000" />
       <workItem from="1656768290780" duration="2296000" />
       <workItem from="1656824469110" duration="10126000" />
+      <workItem from="1656929277714" duration="4071000" />
     </task>
     <servers />
   </component>
