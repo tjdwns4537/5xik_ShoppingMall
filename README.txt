@@ -21,6 +21,8 @@
 : Spring 에서 memberservice 객체를 컨테이너에서 관리하는 Autowired annotation 이 붙은 이 생성자를 연결시켜준다.
  단, 이때 MemberService 클래스에는 순수 자바이면 안되고, @Service annotation 이 붙어있어야 한다.
 
+ => 만약 생성자가 하나만 있으면 AutoWired 생략 가능 
+
  - Controller <-> Service 구동과정
 1) MemberService 에 대한 생성자를 container 에 Autowired 로 등록함으로써 컨테이너가 관리하도록 해준다.
 2) MemberService 클래스에 @Service annotation을 붙쳐줌
@@ -203,9 +205,32 @@
 
 
 
+[ 2022.07.06 ]
+
+ㅇ 스프링 JdbcTemplate
+: 스프링 jdbcTemplate 와 MyBatis 같은 라이브러리는 JDBC Api 에서 본 반복 코드를 대부분 제거해준다.
+ 하지만 SQL은 직접 작성해야한다.
+
+ㅇ 사용방법
+1) JdbcTemplate 타입의 변수를 생성 ( Injection 을 받을 수 있는 것은 아니다. ) ( 변수명을 jt라 가정 )
+2) jdbcTemplate 클래스의 생성자에 DataSource 를 인자로 받게 만들고 이를 Injection 해준다 ( @Autowired )
+3) 이때 생성자 내부 코드는 this.jdbcTemplate = new JdbcTemplate(dataSource) 이다.
+4) memberRowMapper()를 구현해준다.
+5) jdbcTemplate.query() 의 인자로 sql쿼리와 memberRowMapper() 를 받는다.
+
+
+ * JdbcTemplate 이 코드가 jdbc로 구현한 코드보다 훨씬 짧은 이유는 디자인 패턴 중에 Template Method 패턴이라는게 있다.
+   이를 통해 코드를 줄일 수 있게 된것이다. 
 
 
 
+ㅇ JPA
+: JdbcTemplate 을 사용해도 결국 해결되지 않는 부분이 있다.
+ 그것은 SQL 을 개발자가 직접 작성을 해야한다는 것이다. 그런데 JPA를 사용하면 SQL 쿼리도 JPA가 자동으로 처리를 해준다.
+ 이를 통해 개발 생산성을 크게 높일 수 있다. 마치 객체를 MemoryMemberRepository에서 처럼 JPA에 집어 넣으면
+ JPA가 중간에서 DB에 SQL을 보내고 데이터를 처리하는것을 JPA가 다 처리를 해준다.
+ 그리고 단순히 SQL을 만들어 주는것을 넘어서서 객체 중심으로 고민을 할 수 있게 된다는 장점도 있다.
+ 그래서 SQL,데이터 중심의 설계에서 객체 중심의 설계로 패러다임을 전환할 수 있다.
 
 
 

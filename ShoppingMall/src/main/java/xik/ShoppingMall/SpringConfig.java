@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import xik.ShoppingMall.Repository.JDBCMemberRepository;
+import xik.ShoppingMall.Repository.JdbcTemplateMemberRepository;
 import xik.ShoppingMall.Repository.MemberRepository;
 import xik.ShoppingMall.Service.MemberService;
 
@@ -26,6 +27,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
         // return new MemoryMemberRepository();
-        return new JDBCMemberRepository(dataSource);
+        //return new JDBCMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
