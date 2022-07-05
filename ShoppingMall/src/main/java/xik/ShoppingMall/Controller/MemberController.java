@@ -34,7 +34,7 @@ public class MemberController {
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
-        member.setPhoneNumber(form.getPhoneNumber());
+        //member.setPhoneNumber(form.getPhoneNumber());
 
         memberService.join(member);
 

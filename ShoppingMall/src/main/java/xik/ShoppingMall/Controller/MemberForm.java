@@ -10,7 +10,9 @@ public class MemberForm {
     @Getter
     @Setter
     private String name;
+
     @Getter
     @Setter
     private String phoneNumber;
+
 }

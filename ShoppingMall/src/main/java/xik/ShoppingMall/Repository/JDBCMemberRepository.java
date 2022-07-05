@@ -19,7 +19,7 @@ public class JDBCMemberRepository implements MemberRepository{
 
     @Override
     public Member save(Member member) {
-        String sql = "insert into member(name) value(?)";
+        String sql = "insert into member(name) values(?)";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -58,6 +58,7 @@ public class JDBCMemberRepository implements MemberRepository{
                 Member member = new Member();
                 member.setId(rs.getLong("id"));
                 member.setName(rs.getString("name"));
+                //member.setPhoneNumber(rs.getString("phoneNumber"));
                 return Optional.of(member);
             } else {
                 return Optional.empty();

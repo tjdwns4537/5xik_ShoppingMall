@@ -46,18 +46,18 @@ public class MemoryMemberRepositoryTest {
         Assertions.assertThat(result).isEqualTo(member1);
     }
 
-    @Test
-    public void findByPhoneNum() {
-        Member member1 = new Member();
-        member1.setPhoneNumber("010-7472-4537");
-        member1.setName("parksungjun");
-
-        memberRepository.save(member1);
-
-        Member result = memberRepository.findByPhoneNumber("010-7472-4537").get();
-
-        Assertions.assertThat(result).isEqualTo(member1);
-    }
+//    @Test
+//    public void findByPhoneNum() {
+//        Member member1 = new Member();
+//        member1.setPhoneNumber("010-7472-4537");
+//        member1.setName("parksungjun");
+//
+//        memberRepository.save(member1);
+//
+//        //Member result = memberRepository.findByPhoneNumber("010-7472-4537").get();
+//
+//        Assertions.assertThat(result).isEqualTo(member1);
+//    }
 
     @Test
     public void findAll() {

@@ -12,9 +12,8 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfig {
 
-    private DataSource dataSource;
+    private final DataSource dataSource;
 
-    @Autowired
     public SpringConfig(DataSource dataSource) {
         this.dataSource = dataSource;
     }
