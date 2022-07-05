@@ -19,7 +19,7 @@ public class JDBCMemberRepository implements MemberRepository{
 
     @Override
     public Member save(Member member) {
-        String sql = "insert into member(name) values(?)";
+        String sql = "insert into member(name,phoneNumber) values(?,?)";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -28,6 +28,7 @@ public class JDBCMemberRepository implements MemberRepository{
             pstmt = conn.prepareStatement(sql,
                     Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, member.getName());
+            pstmt.setString(2, member.getPhoneNumber());
             pstmt.executeUpdate();
             rs = pstmt.getGeneratedKeys();
             if (rs.next()) {
@@ -58,7 +59,7 @@ public class JDBCMemberRepository implements MemberRepository{
                 Member member = new Member();
                 member.setId(rs.getLong("id"));
                 member.setName(rs.getString("name"));
-                //member.setPhoneNumber(rs.getString("phoneNumber"));
+                member.setPhoneNumber(rs.getString("phoneNumber"));
                 return Optional.of(member);
             } else {
                 return Optional.empty();
@@ -97,7 +98,27 @@ public class JDBCMemberRepository implements MemberRepository{
 
     @Override
     public Optional<Member> findByPhoneNumber(String phoneNumber) {
-        return Optional.empty();
+        String sql = "select * from member where phoneNumber = ?";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, phoneNumber);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                Member member = new Member();
+                member.setId(rs.getLong("id"));
+                member.setName(rs.getString("phoneNumber"));
+                return Optional.of(member);
+            }
+            return Optional.empty();
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        } finally {
+            close(conn, pstmt, rs);
+        }
     }
 
     @Override

@@ -25,6 +25,7 @@ class MemberServiceIntegrationTest {
         //given
         Member member = new Member();
         member.setName("parksungjun");
+        member.setPhoneNumber("010-7472-4537");
 
         //when
         Long saveId = memberService.join(member);
@@ -40,8 +41,8 @@ class MemberServiceIntegrationTest {
         Member mem1 = new Member();
         Member mem2 = new Member();
 
-//        mem1.setPhoneNumber("010-7472-4537");
-//        mem2.setPhoneNumber("010-7472-4537");
+        mem1.setPhoneNumber("010-7472-4537");
+        mem2.setPhoneNumber("010-7472-4537");
 
         //when
         memberService.join(mem1);

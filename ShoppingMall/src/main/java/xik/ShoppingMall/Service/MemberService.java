@@ -26,7 +26,7 @@ public class MemberService {
     }
 
     private void validateDuplicateMember(Member member) {
-        Optional<Member> result = memberRepository.findByName(member.getPhoneNumber());
+        Optional<Member> result = memberRepository.findByPhoneNumber(member.getPhoneNumber());
         result.ifPresent(m ->{
             throw new IllegalStateException("이미 가입된 휴대폰 번호입니다.");
         });
