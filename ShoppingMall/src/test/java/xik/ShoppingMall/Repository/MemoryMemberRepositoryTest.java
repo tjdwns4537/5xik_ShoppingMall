@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import xik.ShoppingMall.Domain.Member;
 
 import java.util.List;
-import java.util.Optional;
 
 public class MemoryMemberRepositoryTest {
     MemoryMemberRepository memberRepository = new MemoryMemberRepository();

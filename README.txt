@@ -321,10 +321,15 @@
 
 
 
+[ 2022.07.08 ]
+ ㅇ Service 인터페이스 / 구현체 분리 진행
 
- # Service 인터페이스 / 구현체 분리
+ ㅇ 중간 정리
 
-
+ - MemberRepository : JpaRepository를 통해 스프링 빈에 등록
+ - MemberService : SpringConfig 를 통해 스프링 빈에 등록
+ - FixDiscountPolicy : SpringConfig 를 통해 스프링 빈에 등록
+ - OrderService : SpringConfig를 통해 스프링 빈에 등록
 
 
 

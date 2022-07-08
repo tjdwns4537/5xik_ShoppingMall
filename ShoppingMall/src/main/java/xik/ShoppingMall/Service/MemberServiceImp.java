@@ -22,7 +22,6 @@ public class MemberServiceImp implements MemberServiceInterface{
     @Override
     public Long join(Member member) {
         // 휴대폰 번호 중복 체크
-        member.setGrade(Grade.BASIC);
         validateDuplicateMember(member);
         memberRepository.save(member);
         return member.getId();
