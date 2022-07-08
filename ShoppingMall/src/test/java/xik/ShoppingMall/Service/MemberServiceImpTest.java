@@ -10,14 +10,14 @@ import xik.ShoppingMall.Repository.MemoryMemberRepository;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class MemberServiceTest {
+class MemberServiceImpTest {
     MemoryMemberRepository memberRepository;
-    MemberService memberService;
+    MemberServiceImp memberServiceImp;
 
     @BeforeEach
     public void beforeEach() {
         memberRepository = new MemoryMemberRepository();
-        memberService = new MemberService(memberRepository);
+        memberServiceImp = new MemberServiceImp(memberRepository);
     }
 
     @AfterEach
@@ -32,10 +32,10 @@ class MemberServiceTest {
         member.setName("parksungjun");
 
         //when
-        Long saveId = memberService.join(member);
+        Long saveId = memberServiceImp.join(member);
 
         //then
-        Member result = memberService.findOne(saveId).get();
+        Member result = memberServiceImp.findOne(saveId).get();
         Assertions.assertThat(member.getName()).isEqualTo(result.getName());
     }
 
@@ -49,10 +49,10 @@ class MemberServiceTest {
 //        mem2.setPhoneNumber("010-7472-4537");
 
         //when
-        memberService.join(mem1);
+        memberServiceImp.join(mem1);
 
         //then
-        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(mem2));
+        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberServiceImp.join(mem2));
         assertThat(e.getMessage()).isEqualTo("이미 가입된 휴대폰 번호입니다.");
     }
 

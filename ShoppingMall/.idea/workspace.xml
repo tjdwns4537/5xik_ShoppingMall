@@ -5,10 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae6557bc-483b-4881-9eea-f905d3d5c57b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Domain/Grade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JpaMemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberServiceInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Login/ErrorPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Main/PrevPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Domain/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Domain/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Service/MemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/Login/memberNew.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/Login/memberNew.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/Main/5xik.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/Main/5xik.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Service/MemberServiceIntegrationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ddl/query.ddl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ddl/query.ddl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Login/memberNew.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Login/memberNew.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Main/5xik.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Main/5xik.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceImpIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceImpTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +88,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -136,7 +164,7 @@
       <recent name="xik.ShoppingMall.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MemberServiceIntegrationTest">
+  <component name="RunManager" selected="JUnit.MemberServiceImpIntegrationTest.join">
     <configuration name="MemberServiceIntegrationTest.join (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -183,7 +211,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MemberServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MemberServiceImpIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoppingMall.test" />
       <extension name="coverage">
         <pattern>
@@ -192,13 +220,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="xik.ShoppingMall.Service" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Service.MemberServiceIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Service.MemberServiceImpIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberServiceIntegrationTest.duplicate_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MemberServiceImpIntegrationTest.duplicate_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoppingMall.test" />
       <extension name="coverage">
         <pattern>
@@ -207,14 +235,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="xik.ShoppingMall.Service" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Service.MemberServiceIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Service.MemberServiceImpIntegrationTest" />
       <option name="METHOD_NAME" value="duplicate_Test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberServiceIntegrationTest.join" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MemberServiceImpIntegrationTest.join" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoppingMall.test" />
       <extension name="coverage">
         <pattern>
@@ -223,7 +251,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="xik.ShoppingMall.Service" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Service.MemberServiceIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Service.MemberServiceImpIntegrationTest" />
       <option name="METHOD_NAME" value="join" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -239,9 +267,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MemberServiceIntegrationTest" />
-        <item itemvalue="JUnit.MemberServiceIntegrationTest.join" />
-        <item itemvalue="JUnit.MemberServiceIntegrationTest.duplicate_Test" />
+        <item itemvalue="JUnit.MemberServiceImpIntegrationTest.join" />
+        <item itemvalue="JUnit.MemberServiceImpIntegrationTest" />
+        <item itemvalue="JUnit.MemberServiceImpIntegrationTest.duplicate_Test" />
         <item itemvalue="Gradle.MemberServiceIntegrationTest.join (1)" />
         <item itemvalue="Gradle.MemberServiceTest" />
       </list>
@@ -270,6 +298,8 @@
       <workItem from="1656983075967" duration="1319000" />
       <workItem from="1656994360945" duration="13510000" />
       <workItem from="1657033034471" duration="2642000" />
+      <workItem from="1657122782738" duration="2662000" />
+      <workItem from="1657155456183" duration="21694000" />
     </task>
     <servers />
   </component>

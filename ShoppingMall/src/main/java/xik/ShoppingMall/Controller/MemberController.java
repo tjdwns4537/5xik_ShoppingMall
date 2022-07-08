@@ -5,19 +5,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import xik.ShoppingMall.Domain.Grade;
 import xik.ShoppingMall.Domain.Member;
-import xik.ShoppingMall.Service.MemberService;
+import xik.ShoppingMall.Service.MemberServiceImp;
 
 import java.util.List;
 
 @Controller
 public class MemberController {
 
-    private final MemberService memberService;
+    private final MemberServiceImp memberServiceImp;
 
     @Autowired
-    public MemberController(MemberService memberService) {
-        this.memberService = memberService;
+    public MemberController(MemberServiceImp memberServiceImp) {
+        this.memberServiceImp = memberServiceImp;
     }
 
     @GetMapping("/login")
@@ -34,9 +35,9 @@ public class MemberController {
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
-        //member.setPhoneNumber(form.getPhoneNumber());
+        member.setPhoneNumber(form.getPhoneNumber());
 
-        memberService.join(member);
+        memberServiceImp.join(member);
 
         // redirect:/ 하면 홈화면으로 보내는 것이다.
         return "redirect:/5xik";
@@ -44,7 +45,7 @@ public class MemberController {
 
     @GetMapping("/members")
     public String list(Model model) {
-        List<Member> members = memberService.findMember();
+        List<Member> members = memberServiceImp.findMember();
         model.addAttribute("members", members);
         return "/Login/memberCheck";
     }

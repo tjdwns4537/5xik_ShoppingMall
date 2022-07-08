@@ -232,6 +232,102 @@
  그리고 단순히 SQL을 만들어 주는것을 넘어서서 객체 중심으로 고민을 할 수 있게 된다는 장점도 있다.
  그래서 SQL,데이터 중심의 설계에서 객체 중심의 설계로 패러다임을 전환할 수 있다.
 
+ - 그래서 간단히 말하면 JPA 는 인터페이스를 제공해주는 것이고, 구현체로 여러가지가 있는데 여기서는 Hibernate 를 사용한다.
+
+ 1) dependency 
+: implementation 'org.springframework.boot:spring-boot-starter-data-jpa' => jpa, jdbc 모두 포함하는 것
+
+ 2) application.properties 에 설정 추가
+ - spring.jpa.show-sql=true 		
+   ==> jpa 가 날리는 sql 볼 수 있음
+ - spring.jpa.hibernate.ddl-auto = none 	
+   ==> jpa 는 객체를 보고 테이블도 알아서 생성한다. 그런데 지금 테이블은 이미 만들어 져있으므로 만들지 않도록 none 설정 해준다.
+	( create 하면 테이블 자동 생성 )
+
+ 3) Entity Mapping
+ - ORM 의 방법인대 O : 객체, R : 관계, M : 매핑 이라해서 객체와 관계를 매핑해주는데 이를 엔티티 어노테이션으로 한다.
+ - @Entitiy 를 붙치면 JPA가 관리하는 엔티티라는 의미이다.
+
+	3-1) @Id : Primary Key이다. 데이터를 생성하면 DB에서 알아서 Id값을 생성해주는데 이를 아이덴티티라고한다.
+		지금은 이 아이덴티티가 이뤄지고 있기때문에 아래의 GenerateValue를 설정해준다.
+	3-2) @GeneratedValue(strategy = GenerationType.IDENTITY )
+	3-3) @Column(name = "userName" )
+		: 객체명은 name이지만 DB에서는 Column name 을 userName으로 쓰고 있는 경우 이렇게 설정한다.
+
+ 4) Repository 구현
+ - EntityManager : JPA는 모든게 EntityManager 라는 것을 통해서 구현이 된다.
+  ( 인젝션이 엔티티 매니저를 통해 이뤄진다. )
+ - em.persist(member) : member 를 영속한다는 의미 , 이 함수하나로 인서트 쿼리가 다 만들어진다.
+ - em.find(Member.class, id) : member의 id를 찾아준다.
+
+ - em.createQuery( :select m from Member m", Member.class )
+    : PK(id)가 아닌 나머지 객체에 대한 값을 찾을 때는 JPQL 함수를 써줘야한다. 보통 쿼리는 테이블을 대상으로 주고받게 되는데
+     JPQL은 테이블이 아닌 객체를 대상 (엔티티를 대상) 으로 쿼리를 날리는 것이다. 그럼 이게 SQL로 번역이 된다.
+	이때, 주의깊게 볼것은 select m 에서 m이 특이하다. 객체 자체를 다루는 것이다.
+ 
+ 5) Service 에 @Transactional 을 붙쳐줘야한다.
+    JPA 는 모든 데이터를 다룰때 트랜잭션 안에서 이뤄지기 때문이다.
+
+
+
+
+
+
+
+
+[ 2022. 07. 07 ]
+
+ㅇ 스프링 데이터 JPA ( * import org.springframework.data.jpa.repository.JpaRepository 클래스 영역 )
+: 개발해야할 코드를 줄어들게 해줌으로써 리포지토리에 클래스 없이 인터페이스만으로 개발 할 수 있게 해줍니다.
+ 즉, JPA를 편리하게 쓸 수 있도록 도와준다.
+
+  * JpaRepository를 Command+클릭해서 들어가서 보면 어떤 메서드들이 기본적으로 제공되는지 다 볼 수 있다.
+
+
+ - 방법
+ 1) JpaRepository를 상속 받는다.
+	* 이때, Interface 가 Interface를 상속받으므로  implements가 아닌 extends로 상속받는다.
+	* 형태 : JpaRepository<Member, 식별자(PK- Id)타입>, MemberRepository
+		-> < > 와 MemberRepository 두개를 다중 상속받는 것이다.
+
+ 2) 내부에 오버라이딩 메서드를 작성해준다.
+	* 이때, findByName과 같은 공통적으로 사용할 수 없는 메서드들을 작성해주는데 적으면 자동으로
+	select에 대한 쿼리가 작성된다. ( JPQL문법 이해 필요 )
+   
+ 3) 그러면 SpringDataJpa가 JpaRepository를 상속받고 있으면 구현체를 자동으로 만들어준다. 그러면 내가 스프링 빈에 등록하지 않
+    아도 스프링 빈에 자동으로 등록된다.  
+
+ => 즉, 원래 하던 방식인 MemberRepository 생성자 내부에 return new JpaMemberRepository(em) 과 같은 소스코드를
+    작성하지 않아도 된다는 것이다.
+
+ 
+ - 구현 동작 과정
+ 1) SpringDataJpa가 상속받은 리포지토리 인터페이스를 보고 스프링 빈을 자동으로 만든다.
+ 2) 프록시라는 기술을 통해 객체를 생성한다.
+ 3) 객체를 스프링 빈에 올려준다.
+ 4) 스프링 빈에 올라와있는 객체를 Injection을 통해 사용한다.
+ 
+
+ - Spring Data Jpa 제공 기능
+ 1) 인터페이스를 통한 기본적인 CRUD
+ 2) findByName(), findByEmail() 처럼 메서드 이름만으로 조회 기능 제공한다.
+ 3) 페이징 기능 자동으로 제공한다.
+
+	* 실무에선 스프링 데이터 JPA를 사용하고, 복잡한 동적 쿼리는 Querydsl이라는 라이브러리를 사용하면 된다.
+	Querydsl을 사용하면 쿼리도 자바 코드로 안전하게 작성할 수 있고, 동적 쿼리도 편리하게 작성할 수 있다.
+	이 둘을 통해서도 해결하기 어렵다면 JPA가 제공하는 네이티브 쿼리나 스프링 JdbcTemplate을 사용해야 한다.
+
+
+
+
+
+
+ # Service 인터페이스 / 구현체 분리
+
+
+
+
+
 
 
 
