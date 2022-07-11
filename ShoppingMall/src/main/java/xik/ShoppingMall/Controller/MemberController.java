@@ -8,16 +8,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import xik.ShoppingMall.Domain.Grade;
 import xik.ShoppingMall.Domain.Member;
 import xik.ShoppingMall.Service.MemberServiceImp;
+import xik.ShoppingMall.Service.MemberServiceInterface;
 
 import java.util.List;
 
 @Controller
 public class MemberController {
 
-    private final MemberServiceImp memberServiceImp;
+    private final MemberServiceInterface memberServiceImp;
 
     @Autowired
-    public MemberController(MemberServiceImp memberServiceImp) {
+    public MemberController(MemberServiceInterface memberServiceImp) {
         this.memberServiceImp = memberServiceImp;
     }
 

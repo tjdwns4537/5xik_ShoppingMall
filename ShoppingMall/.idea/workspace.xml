@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae6557bc-483b-4881-9eea-f905d3d5c57b" name="Changes" comment="" />
+    <list default="true" id="ae6557bc-483b-4881-9eea-f905d3d5c57b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/BeanFind/ApplicationContextInfoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Discount/RateDiscountPolicyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Discount/RateDiscountPolicyTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Discount/RateDiscountPolicyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Discount/RateDiscountPolicyTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,8 +69,8 @@
         <option value="HTML File" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -133,33 +143,34 @@
       <recent name="xik.ShoppingMall.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RateDiscountPolicyTest.discount">
-    <configuration name="MemberServiceImpIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ApplicationContextInfoTest.findApplication">
+    <configuration name="ApplicationContextInfoTest.findApplication" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoppingMall.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="xik.ShoppingMall.Service.*" />
+          <option name="PATTERN" value="xik.ShoppingMall.BeanFind.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="xik.ShoppingMall.Service" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Service.MemberServiceImpIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="xik.ShoppingMall.BeanFind" />
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.BeanFind.ApplicationContextInfoTest" />
+      <option name="METHOD_NAME" value="findApplication" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MemberServiceImpIntegrationTest.join" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApplicationContextInfoTest.findBean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoppingMall.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="xik.ShoppingMall.Service.*" />
+          <option name="PATTERN" value="xik.ShoppingMall.BeanFind.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="xik.ShoppingMall.Service" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Service.MemberServiceImpIntegrationTest" />
-      <option name="METHOD_NAME" value="join" />
+      <option name="PACKAGE_NAME" value="xik.ShoppingMall.BeanFind" />
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.BeanFind.ApplicationContextInfoTest" />
+      <option name="METHOD_NAME" value="findBean" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -221,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationContextInfoTest.findApplication" />
+        <item itemvalue="JUnit.ApplicationContextInfoTest.findBean" />
         <item itemvalue="JUnit.RateDiscountPolicyTest.discount" />
         <item itemvalue="JUnit.OrderServiceImpTest.createOrder (1)" />
         <item itemvalue="JUnit.OrderServiceImpTest" />
-        <item itemvalue="JUnit.MemberServiceImpIntegrationTest" />
-        <item itemvalue="JUnit.MemberServiceImpIntegrationTest.join" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +265,7 @@
       <workItem from="1657033034471" duration="2642000" />
       <workItem from="1657122782738" duration="2662000" />
       <workItem from="1657155456183" duration="22029000" />
-      <workItem from="1657278394603" duration="8315000" />
+      <workItem from="1657278394603" duration="22169000" />
     </task>
     <servers />
   </component>

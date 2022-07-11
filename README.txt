@@ -336,6 +336,120 @@
 
 
 
+[ 2022.07.11 ]
+ㅇ 테스트코드를 클라이언트 코드라고 생각하고 진행한다.
+
+ㅇ 좋은 객체지향 설계와 현재의 코드를 비교
+ 
+ - SRP : 한 클래스에서 하나의 책임만 가진다. ( 관심사의 분리 )
+	1) SpringConfig : 구현 객체를 생성하고 연결
+	2) 클라이언트 객체 : 실행
+
+ - DIP : 추상화에 의존하여 의존성 주입을 한다.
+	1) 클라이언트 코드에서는 인터페이스만 실행한다.
+	2) SpringConfig에서 다른 DiscountPolicy를 생성함으로써 의존성 주입이 일어난다.
+	3) SpringConfig에서만 코드를 수정하면 되는 것이다.
+
+ - OCP : 소프트웨어 요소는 확장에는 열려있으나 변경에는 닫혀 있다.
+	1) 다형성을 사용하고 클라이언트가 DIP를 지킨다.
+	2) 애플리케이션을 사용 영역과 구성 영역으로 나뉜다.
+	3) SpringConfig에서 의존관계를 변경함으로써 주입하므로 클라이언트 코드는 변경하지 않아도 된다.
+	4) 즉, 소프트웨어 요소를 새롭게 확장해도 사용 영역의 변경은 닫혀 있다.
+	* 변경이 닫혀있다 ==> 변경할 필요가 없다는 의미이다.
+
+
+ ㅇ 제어의 역전 ( Inversion Of Control )
+: 클라이언트 구현 객체가 스스로 필요한 서버 구현 객체를 생성하고 연결하고 실행하는 과정을 가지는게 아닌
+ SpringConfig를 통해서 프로그램에 대한 제어의 흐름을 관리하고 클라이언트 객체에서는 자신의 로직만을 실행하는
+ 역할을 하는 것이다. 이렇게 제어의 흐름을 직접 제어하는게 아니라 외부에서 관리하게 하는 것을 IoC 라고 한다.
+
+
+
+ ㅇ 프레임워크와 라이브러리의 차이
+ 
+ - 프레임워크 : 내가 작성한 코드를 제어하고 대신 실행하면 그건 프레임워크이다. ( ex. JUnit )
+ - 라이브러리 : 내가 작성한 코드가 직접 제어 흐름을 담당하면 라이브러리다.
+
+ 
+ ㅇ Dependency Injection
+ 
+ - 실행 코드를 예를 들면 OrderServiceImp 는 DiscountPolicy 인터페이스에 의존한다.
+   실제 어떤 구현 객체가 사용될지는 모른다.
+ - 의존 관계는 [ 정적인 클래스 의존 관계 ] 와 [ 실행 시점에 결정되는 동적인 객체 의존관계 ] 를 분리해서 생각한다.
+ - 의존 관계 주입을 사용하면 클라이언트 코드를 변경하지 않고, 호출하는 대상의 타입 인스턴스를 변경할 수 있다.
+ - 의존 관계 주입을 사용하면 정적인 클래스 의존관계의 코드를 손대지 않고,
+   동적인 객체 인스턴스 의존관계를 쉽게 변경할 수 있다.
+
+
+ 	* 정적인 클래스 의존 관계
+
+ : import 코드만 보고 의존관계를 쉽게 판단할 수 있다. 즉, 실행하지 않아도 분석할 수 있는 것이다.
+ 예제 코드를 보면 OrderServiceImpl 는 MemberRepository, DiscountPolicy에 의존한다는 것을 알 수 있다.
+ 그런데 실제 어떤 객체가 OrderServiceImpl에 주입 될 지는 알 수 없다.
+
+
+ 	* 실행 시점에 결정되는 동적인 객체 의존관계
+
+ : 애플리케이션 실행 시점 (런타임) 에 외부에서 실제 구현 객체를 생성하고 클라이언트에 전달해서 클라이언트와 서버의
+ 실제 의존관계가 연결되는 것을 의존관계 주입이라고 한다.
+
+
+ ㅇ IoC컨테이너, DI컨테이너
+ : SpringConfig와 같이 객체를 생성하고 의존관계를 연결해주는것을 의미한다.
+
+
+
+ ㅇ 순수 자바로 작성한 코드를 스프링으로 전환하는 방법
+
+ 1) SpringConfig에 파일에 @Configuration , @Bean을 붙쳐준다.
+ 2) 클라이언트 코드에서 SpringConfig.class를 가지는 ApplicationContext 객체를 생성해준다.
+ 3) applicationContext.getBean("빈 이름",클래스) 를 적어서 Bean을 가져온다.
+	* 이때 Bean에는 메서드 이름으로 등록된다. 그래서 applicationContext로 가져올때 메서드 이름을 적는다.
+	* 클래스는 가져온 Bean이름에 해당하는 반환 타입이 된다.
+ 
+
+ ㅇ Application Context
+
+ - 스프링 컨테이너라 부름
+ - 인터페이스이다.
+ - 스프링 컨테이너는 XML기반/ 에노테이션 기반 두가지로 만들 수 있음
+ - 에노테이션 기반의 자바 설정 클래스를 만들 수 있음
+ - SpringConfig 방식이 에노테이션 기반의 자바 설정 클래스로 스프링 컨테이너를 만든 것
+ - new AnnotationConfigApplicationContext(SpringConfig.class) 부분이 인터페이스의 구현체이다.
+
+
+ ㅇ BeanFactory,ApplicationContext, AnnotationConfigApplicationContext 비교하기
+
+ - BeanFactory 
+  : 스프링 빈을 관리하고, 조회하는 역할을 담당한다. getBean()을 제공한다.
+
+ - ApplicationContext
+  : BeanFactory 기능을 모두 상속받아서 제공한다.
+  : 애플리케이션을 개발할 때 빈은 관리하고 조회하는 기능 등 많은 부가 기능이 필요하다.
+	1) 메시지 소스를 활용한 국제화 기능
+	2) 환경 변수
+	3) 애플리케이션 이벤트
+	4) 편리한 리소스 조회
+
+
+
+# 빈 조회하기 : 핵심편 - 스프링 빈 조회하기
+
+ ㅇ 빈 조회 코드
+
+@Test
+    @DisplayName("application 빈 출력하기")
+    void findApplication() {
+        String[] beanDefinitionName = ac.getBeanDefinitionNames();
+        for (String i : beanDefinitionName) {
+            BeanDefinition beanDefinition = ac.getBeanDefinition(i);
+            if (beanDefinition.getRole() == BeanDefinition.ROLE_APPLICATION) {
+                Object bean = ac.getBean(i);
+                System.out.println("name = " + i + "object" + bean);
+            }
+        }
+    }
+
 
 
 

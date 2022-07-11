@@ -4,26 +4,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import xik.ShoppingMall.Discount.DiscountPolicy;
-import xik.ShoppingMall.Discount.FixDiscountPolicy;
 import xik.ShoppingMall.Discount.RateDiscountPolicy;
 import xik.ShoppingMall.Repository.MemberRepository;
+import xik.ShoppingMall.Repository.MemoryMemberRepository;
+import xik.ShoppingMall.Repository.SpringDataJpaMemberRepository;
 import xik.ShoppingMall.Service.MemberServiceImp;
+import xik.ShoppingMall.Service.MemberServiceInterface;
 import xik.ShoppingMall.Service.OrderService;
 import xik.ShoppingMall.Service.OrderServiceImp;
+
+import javax.swing.*;
 
 @Configuration
 public class SpringConfig {
 
-    private final MemberRepository memberRepository;
+//    private final MemberRepository memberRepository;
+//
+//    public SpringConfig(MemberRepository memberRepository){
+//        this.memberRepository = memberRepository;
+//    }
 
-    @Autowired
-    public SpringConfig(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
+    @Bean
+    public MemberServiceInterface memberService() {
+        return new MemberServiceImp(memberRepository());
     }
 
     @Bean
-    public MemberServiceImp memberService() {
-        return new MemberServiceImp(memberRepository);
+    public MemberRepository memberRepository() {
+        return new MemoryMemberRepository();
     }
 
     @Bean
@@ -33,7 +41,7 @@ public class SpringConfig {
 
     @Bean
     public OrderService orderService() {
-        return new OrderServiceImp(memberRepository, discountPolicy());
+        return new OrderServiceImp(memberRepository(), discountPolicy());
     }
 
 
