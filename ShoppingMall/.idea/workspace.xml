@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae6557bc-483b-4881-9eea-f905d3d5c57b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Discount/DiscountPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Discount/FixDiscountPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Discount/RateDiscountPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Order/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/OrderServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Discount/RateDiscountPolicyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/OrderServiceImpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Service/MemberServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Service/MemberServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Repository/MemoryMemberRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Repository/MemoryMemberRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Service/MemberServiceImpIntegrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Service/MemberServiceImpIntegrationTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Service/MemberServiceImpTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Service/MemberServiceImpTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Repository/MemoryMemberRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Repository/MemoryMemberRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceImpIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceImpIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceImpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/MemberServiceImpTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="ae6557bc-483b-4881-9eea-f905d3d5c57b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -276,7 +254,7 @@
       <workItem from="1657033034471" duration="2642000" />
       <workItem from="1657122782738" duration="2662000" />
       <workItem from="1657155456183" duration="22029000" />
-      <workItem from="1657278394603" duration="7707000" />
+      <workItem from="1657278394603" duration="8315000" />
     </task>
     <servers />
   </component>
