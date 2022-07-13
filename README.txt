@@ -456,3 +456,238 @@
 
 
 
+
+ [ 2022.07.11 ]
+
+ㅇ 스프링이 Annotation / XML 에 대해 호환될 수 있는 이유
+: BeanDefinition 을 통해 추상화가 잘 이뤄져있기 때문이다. BeanDefinition을 빈 설정 메타정보라고 부른다.
+ @bean, <bean> 당 각각 하나씩 메타정보가 생성된다. 그리고 스프링 컨테이너는 이 빈 메타정보를 기반으로
+ 스프링 빈을 생성한다.
+
+
+ ㅇ 싱글톤 컨테이너
+
+ : 객체 인스턴스가 JVM안에 딱 하나만 있어야 하는 것
+
+ 
+
+ ㅇ 싱글톤 패턴을 사용해야 하는 이유
+
+ : 서비스에 대한 객체를 만들어서 주소를 찍어보면은 각각 전부 다른 객체가 나옴을 알 수 있다.
+  하지만 하나의 기능만 수행하는 객체의 경우 굳이 여러 객체를 만들어서 공간을 낭비할 필요가 없는데
+  이를 위해 하나의 객체를 공유해서 사용할 수 있도록 하기 위해 싱글톤 패턴을 사용합니다.
+
+ ㅇ 싱글톤 패턴
+
+ : 클래스의 인스턴스가 딱 1개만 생성되는 것을 보장하는 디자인 패턴
+ : 객체 인스턴스를 2개 이상 생성하지 못하도록 막아야 한다.
+	=> private 생성자를 사용해 외부에서 임의로 new키워드를 사용하지 못하도록 막아야한다.
+
+ 
+ - 형태:
+    private static final SingletonService instance = new SingletonService();
+
+    public static SingletonService getInstance() {
+        return instance;
+    }
+
+    private SingletonService() {
+
+    }
+
+    public void logic() {
+        System.out.println("Singleton 객체 로직 호출");
+    }
+
+ => static영역에 인스턴스 객체가 생성되며, 생성자를 private로 막아놨기 때문에 new로 생성하려고 하면 에러가 발생한다.
+ => 이 객체 인스턴스가 필요하면 오직 getInstance() 메서드를 통해서만 조회가 가능하다.
+ 
+ ㅇ 싱글톤 패턴의 문제점
+ 1) 코드 자체가 기본적으로 많이 들어간다.
+ 2) 클라이언트가 구체 클래스에 의존함으로써 DIP위반된다.
+ 3) 구현 클래스에 의존함으로써 OCP원칙 위반할 가능성이 높다.
+ 4) 테스트하기 어렵다
+ 5) private 생성자로 자식 클래스 만들기 어렵다
+ 6) 유연성이 떨어진다.
+
+
+ ㅇ 스프링 프레임워크를 써야하는 이유
+ : 이러한 싱글톤의 단점을 다 제거하고, 싱글톤의 장점만을 이용해준다.
+
+
+
+
+ ㅇ 싱글톤 방식의 주의점 *****
+ : 싱글톤 패턴, 스프링의 싱글톤 컨테이너 등 객체 인스턴스를 하나만 생성해서 공유하는 싱글톤 방식은
+ 여러 클라이언트가 하나의 객체 인스턴스를 공유하기 때문에 싱글톤 객체는 < 상태를 유지 > 하게 설계하면 안된다.
+ 
+ => 무상태로 설계
+	- 특정 클라이언트에 의존적인 필드가 있으면 안됨
+	- 특정 클라이언트가 값을 변경할 수 있는 필드가 있으면 안됨
+	- 가급적 읽기만 가능해야함
+	- 필드 대신에 자바에서 공유되지 않는 지역변수, 피라미터, 쓰레드 로컬 등을 사용해야함
+
+	* 스프링 빈의 필드에 공유 값을 설정하면 큰 장애가 발생할 수 있다.
+
+
+
+ ㅇ 싱글톤 문제점의 해결방법 : @Configuration
+
+ 예시를 들어보자
+ MemberService -> MemberRepository
+ OrderService -> MemberRepository
+
+ 이렇게 두번 Repository를 호출하게 된다. 그래서 테스트 코드로 호출시마다 로그를 찍게 해줘서 테스트를 해보면 
+ Repository는 딱 한번 호출된다는 것을 알 수 있다.
+
+ 어떻게 이렇게 될 수 있을까?
+
+
+
+  ㅇ xxxxCGLIB
+
+ SpringConfig 의 빈을 만들어서 로그를 찍어보면 그냥 class hello.core.SpringConfig 가 출력되는게 아닌
+ xxxxCGLIB가 출력됨을 볼 수 있다.
+ 이는 내가 만든 클래스가 아니라 스프링이 CGLIB라는 바이트 코드 조작 라이브러리를 사용해서 SpringConfig 클래스를
+ 상속 받은 임의의 다른 클래스를 만들고, 그 다른 클래스를 스프링 빈으로 등록한 것이다.
+
+ * 이는 @Configuration에 정의되어 있으므로, @Bean만 사용하게 될 경우 싱글톤을 보장하지 못한다.
+
+ 
+
+
+
+
+ ㅇ 컴포넌트 스캔 (@ComponentScan)
+
+ : @Bean을 입력하지 않고도 자동으로 스프링 빈을 등록해주는 기능
+
+ * excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class
+  를 사용하면 해당 컴포넌트는 컨테이너로 등록하지 않는다.
+
+ * @Configuration 내부에 @Component가 선언되있기 때문에 자동으로 스프링 컨테이너로 등록되는 것이다.
+
+
+
+
+
+ ㅇ Autowired
+
+ : 자동으로 의존 관계 주입
+ : Bean과 생성자를 주입해준다.
+ : getBean으로 가져와서 확인할 수 있다.
+
+
+ ㅇ ComponentScan 사용 과정
+
+ 1) ComponentScan, Configuration 으로 컨테이너 생성
+ 2) 빈으로 등록할 각 클래스에 @Component를 붙쳐준다. ( 이때 구현체에 @Component를 붙쳐줘야한다 )
+ 3) 생성자에 @Autowired를 붙쳐준다.
+ 4) 그러면 생성자의 [인자의 타입]을 보고 타입과 일치하는 클래스를 찾아서 의존관계 주입을 하게 된다.
+	* 이때 주의해야할 점은 같은 타입이 여러개면 충돌이 발생한다.
+
+
+
+
+
+
+ ㅇ ComponentScan 작명 규칙
+
+	1) 빈 이름 기본 전략 : MeberServiceImp 클래스 -> memberServiceImp
+	2) 빈 이름 직접 지명 : @Component("memberService") 
+
+
+
+
+ ㅇ 컴포넌트 스캔 대상을 지정하기
+
+	@ComponentScan(
+		basePackage = "hello.core.member"
+	)
+	를 하게되면 member 부터 컴포넌트를 읽기 시작한다.
+	
+	* 여러개를 탐색해야 할 경우 => basePackage = "hello/member","hello/Service"
+
+	* 지정하지 않을 경우 => 해당 @ComponentScan이 있는 패키지 경로부터 탐색한다.
+
+	* 최근 관례 => 프로젝트의 최상단에 @ComponentScan 파일을 위치시킨다.
+		=> 최상단이라하면 @SpringBootApplication 과 같은 위치를 의미한다.
+	* 사실 SpringBootApplication 내부에 @Component가 있기 때문에 자동으로 빈이 등록된다.
+
+
+ ㅇ 에노테이션 이해햐기
+
+ : Service/Repository/Controller/Configuration 는 기본적으로 Component를 내포하고있다.
+ 하지만 각각의 에노테이션들이 부가기능을 가지고 있다.
+
+ 1) Controller : 스프링 MVC컨트롤러로 인식
+ 2) Repository : 스프링 데이터 접근 계층으로 인식하고, 데이터 계층의 예외를 스프링 예외로 변환시켜준다.
+ 3) Configuration : 스프링 설정 정보로 인식하고, 싱글톤 유지 추가 처리해준다.
+ 4) Service : 특별한 처리는 없지만, 개발자들이 핵심 비지니스 로직이 있겠구나 인식을 시켜준다.
+
+
+
+
+ ㅇ 커스텀 컴포넌트 만들기
+
+ = 스프링-핵심-원리 [ 필터강의 ]
+
+
+
+
+ ㅇ 수동빈과 자동빈의 name 충돌이 발생하는 경우
+ : 수동빈이 우선권을 가지고 자동빈을 오버라이딩해버린다.
+   이는 대부분 의도치않은 에러이므로 CoreAplication을 실행해보면 오류를 볼 수 있다.
+
+
+
+
+ ㅇ 생성자 주입
+
+ = 스프링-핵심-원리 [ 다양한 의존관계 주입 방법 ]
+
+
+
+ ㅇ 옵션 처리
+
+ - 스프링 빈이 없어도 동작해야하는 경우
+
+ : @Autowired ( required = false ) 로 준다.
+ 이렇게되면 빈이 없는 경우 호출 자체가 안된다.
+ 그래서 출력 결과에 해당하는 내용이 아예 안나온다.
+
+ * 이 외에는 @Nullable, Optional 을 주는 방법이 있다.
+
+
+
+
+ ㅇ 빈이 두개 이상 있을 때
+
+ 1) @Autowired 에 필드명
+	- 타입으로 매칭하기 때문에 타입 매칭의 결과가 2개 이상일 때 필드명 또는 파라미터 명으로 빈 이름 매칭
+
+ ex.
+
+    @Autowired
+    public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
+
+ 이 부분에서 discountPolicy 피라미터를 rateDiscountPolicy로 변경하면 된다.
+
+
+ 2) @Qutifier
+ : 추가 구분자를 붙여주는 방법이다. 주입시 추가적인 방법을 제공하는 것이지 빈 이름을 변경하는 것은 아니다.
+
+ - 사용 방법
+	1. 중복된 빈이 생성되는 클래스에 @Qualifier("RateDiscountPolicy")
+				@Qualifier("FixDisocuntPolicy") 이런식으로 설정해준다.
+	2. 해당 빈을 주입해주는 곳에 @Qualifier("RateDiscountPolicy") DiscountPolicy discounrPolicy
+	   와 같이 설정해준다.
+	=> 실행해보면 Qualifier을 보고 같은 Qualifier이 있는지 확인해보고 주입해준다.
+
+
+ 3) @Primary
+
+

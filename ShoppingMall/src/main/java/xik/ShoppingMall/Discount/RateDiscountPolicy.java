@@ -1,8 +1,12 @@
 package xik.ShoppingMall.Discount;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import xik.ShoppingMall.Domain.Grade;
 import xik.ShoppingMall.Domain.Member;
 
+@Component
+@Qualifier("RateDiscountPolicy")
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private int rateDisocunt = 10;

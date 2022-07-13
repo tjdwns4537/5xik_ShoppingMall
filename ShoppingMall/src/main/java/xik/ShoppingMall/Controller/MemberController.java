@@ -15,11 +15,11 @@ import java.util.List;
 @Controller
 public class MemberController {
 
-    private final MemberServiceInterface memberServiceImp;
+    private final MemberServiceInterface memberService;
 
     @Autowired
-    public MemberController(MemberServiceInterface memberServiceImp) {
-        this.memberServiceImp = memberServiceImp;
+    public MemberController(MemberServiceInterface memberService) {
+        this.memberService = memberService;
     }
 
     @GetMapping("/login")
@@ -38,7 +38,7 @@ public class MemberController {
         member.setName(form.getName());
         member.setPhoneNumber(form.getPhoneNumber());
 
-        memberServiceImp.join(member);
+        memberService.join(member);
 
         // redirect:/ 하면 홈화면으로 보내는 것이다.
         return "redirect:/5xik";
@@ -46,7 +46,7 @@ public class MemberController {
 
     @GetMapping("/members")
     public String list(Model model) {
-        List<Member> members = memberServiceImp.findMember();
+        List<Member> members = memberService.findMember();
         model.addAttribute("members", members);
         return "/Login/memberCheck";
     }

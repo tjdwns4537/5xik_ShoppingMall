@@ -24,7 +24,7 @@ public class MemoryMemberRepositoryTest {
 
         memberRepository.save(member);
 
-        Member result = memberRepository.findById(member.getId()).get();
+        Member result = memberRepository.findByid(member.getId()).get();
 
         //Assertions.assertEquals(member, result);
         Assertions.assertThat(member).isEqualTo(result);
@@ -40,7 +40,7 @@ public class MemoryMemberRepositoryTest {
         memberRepository.save(member1);
         memberRepository.save(member2);
 
-        Member result = memberRepository.findByName("parksungjun").get();
+        Member result = memberRepository.findByname("parksungjun").get();
 
         Assertions.assertThat(result).isEqualTo(member1);
     }
@@ -67,7 +67,7 @@ public class MemoryMemberRepositoryTest {
         memberRepository.save(member1);
         memberRepository.save(member2);
 
-        List<Member> result = memberRepository.findAll();
+        List<Member> result = memberRepository.findall();
 
         Assertions.assertThat(result.size()).isEqualTo(2);
     }

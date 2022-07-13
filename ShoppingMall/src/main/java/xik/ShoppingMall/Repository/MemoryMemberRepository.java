@@ -1,11 +1,13 @@
 package xik.ShoppingMall.Repository;
 
 import org.junit.jupiter.api.AfterEach;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import xik.ShoppingMall.Domain.Member;
 
 import java.util.*;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>(); // 임시 저장히기위한 변수
@@ -19,26 +21,26 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findById(Long id) {
+    public Optional<Member> findByid(Long id) {
         return Optional.ofNullable(store.get(id));
     }
 
     @Override
-    public Optional<Member> findByName(String name) {
+    public Optional<Member> findByname(String name) {
         return store.values().stream()
                 .filter(member -> member.getName().equals(name))
                 .findAny();
     }
 
     @Override
-    public Optional<Member> findByPhoneNumber(String phoneNumber) {
+    public Optional<Member> findByphonenumber(String phoneNumber) {
         return store.values().stream()
                 .filter(member -> member.getPhoneNumber().equals(phoneNumber))
                 .findAny();
     }
 
     @Override
-    public List<Member> findAll() {
+    public List<Member> findall() {
         return new ArrayList<>(store.values());
     }
 

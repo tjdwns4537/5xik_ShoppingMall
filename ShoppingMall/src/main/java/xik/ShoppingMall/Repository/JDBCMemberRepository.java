@@ -45,7 +45,7 @@ public class JDBCMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findById(Long id) {
+    public Optional<Member> findByid(Long id) {
         String sql = "select * from member where id = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -72,7 +72,7 @@ public class JDBCMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findByName(String name) {
+    public Optional<Member> findByname(String name) {
         String sql = "select * from member where name = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -97,7 +97,7 @@ public class JDBCMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findByPhoneNumber(String phoneNumber) {
+    public Optional<Member> findByphonenumber(String phoneNumber) {
         String sql = "select * from member where phoneNumber = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -122,7 +122,7 @@ public class JDBCMemberRepository implements MemberRepository{
     }
 
     @Override
-    public List<Member> findAll() {
+    public List<Member> findall() {
         String sql = "select * from member";
         Connection conn = null;
         PreparedStatement pstmt = null;
