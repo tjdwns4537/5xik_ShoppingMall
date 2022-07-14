@@ -2,15 +2,13 @@ package xik.ShoppingMall.Service;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 import xik.ShoppingMall.Discount.DiscountPolicy;
-import xik.ShoppingMall.Discount.FixDiscountPolicy;
 import xik.ShoppingMall.Domain.Grade;
 import xik.ShoppingMall.Domain.Member;
-import xik.ShoppingMall.Order.Order;
+import xik.ShoppingMall.Domain.Order;
 import xik.ShoppingMall.Repository.MemberRepository;
 
 @SpringBootTest
@@ -45,7 +43,8 @@ public class OrderServiceImpTest {
         memberService.join(member2);
 
         //when
-        Order order = orderService.createOrder(member2.getId(), "itemA", 30000);
+        Order order = orderService.createOrder(member2.getId(),30000);
+        // 30000 자리에 ItemPrice 들어가야함
 
         //then
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);

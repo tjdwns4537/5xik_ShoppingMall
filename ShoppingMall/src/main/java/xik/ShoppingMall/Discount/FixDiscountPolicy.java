@@ -8,7 +8,6 @@ import xik.ShoppingMall.Domain.Member;
 import java.util.Optional;
 
 @Component
-@Qualifier("FixDiscountPolicy")
 public class FixDiscountPolicy implements DiscountPolicy{
 
     private int discountFixMount = 1000;

@@ -1,7 +1,7 @@
 package xik.ShoppingMall.Service;
 
-import xik.ShoppingMall.Order.Order;
+import xik.ShoppingMall.Domain.Order;
 
 public interface OrderService {
-    Order createOrder(Long MemberId, String itemName, int itemPrice);
+    Order createOrder(Long MemberId,int price);
 }

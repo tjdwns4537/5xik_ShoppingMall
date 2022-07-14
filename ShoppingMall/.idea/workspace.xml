@@ -5,40 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae6557bc-483b-4881-9eea-f905d3d5c57b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/AutoSpringConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SingleTon/SingletonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SingleTon/StateFulService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Scan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/SingleTon/StateFulServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Domain/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Domain/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/jpaRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/JpaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Discount/FixDiscountPolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Discount/FixDiscountPolicy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Discount/RateDiscountPolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Discount/RateDiscountPolicy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JDBCMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JDBCMemberRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JpaMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JpaMemberRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/MemberRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/MemoryMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/MemoryMemberRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Service/MemberServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Service/MemberServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Domain/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Domain/Member.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Service/OrderServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Service/OrderServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Repository/MemoryMemberRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/xik/ShoppingMall/Repository/MemoryMemberRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Discount/DiscountPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Discount/DiscountPolicy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Discount/FixDiscountPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Discount/FixDiscountPolicy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Discount/RateDiscountPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Discount/RateDiscountPolicy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JDBCMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JDBCMemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JpaMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JpaMemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemoryMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemoryMemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/OrderServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/OrderServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Repository/MemoryMemberRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Repository/MemoryMemberRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Discount/RateDiscountPolicyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Discount/RateDiscountPolicyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/OrderServiceImpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Service/OrderServiceImpTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,50 +175,57 @@
       <recent name="xik.ShoppingMall.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Scan">
-    <configuration name="ApplicationContextInfoTest.findApplication" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.jpaRepositoryTest">
+    <configuration name="JpaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.JpaTest" />
       <module name="ShoppingMall.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="xik.ShoppingMall.BeanFind.*" />
+          <option name="PATTERN" value="xik.ShoppingMall.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="xik.ShoppingMall.BeanFind" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.BeanFind.ApplicationContextInfoTest" />
-      <option name="METHOD_NAME" value="findApplication" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationContextInfoTest.findBean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoppingMall.test" />
+    <configuration name="MemberEntitiyTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Repository.MemberEntitiyTest" />
+      <module name="ShoppingMall.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="xik.ShoppingMall.BeanFind.*" />
+          <option name="PATTERN" value="xik.ShoppingMall.Repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="xik.ShoppingMall.BeanFind" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.BeanFind.ApplicationContextInfoTest" />
-      <option name="METHOD_NAME" value="findBean" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RateDiscountPolicyTest.discount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoppingMall.test" />
+    <configuration name="jpaRepositoryTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Repository.jpaRepositoryTest" />
+      <module name="ShoppingMall.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="xik.ShoppingMall.Discount.*" />
+          <option name="PATTERN" value="xik.ShoppingMall.Repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="xik.ShoppingMall.Discount" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Discount.RateDiscountPolicyTest" />
-      <option name="METHOD_NAME" value="discount" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JpaTest.JpaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShoppingMall.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="xik.ShoppingMall.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="xik.ShoppingMall" />
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.JpaTest" />
+      <option name="METHOD_NAME" value="JpaTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -247,22 +246,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StateFulServiceTest.FailSigleTon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ShoppingMall.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="xik.ShoppingMall.SingleTon.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="xik.ShoppingMall.SingleTon" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.SingleTon.StateFulServiceTest" />
-      <option name="METHOD_NAME" value="FailSigleTon" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ShoppingMallApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ShoppingMall.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="xik.ShoppingMall.ShoppingMallApplication" />
@@ -272,11 +255,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.jpaRepositoryTest" />
+        <item itemvalue="JUnit.JpaTest.JpaTest" />
+        <item itemvalue="Application.MemberEntitiyTest" />
+        <item itemvalue="Application.JpaTest" />
         <item itemvalue="JUnit.Scan" />
-        <item itemvalue="JUnit.StateFulServiceTest.FailSigleTon" />
-        <item itemvalue="JUnit.ApplicationContextInfoTest.findApplication" />
-        <item itemvalue="JUnit.ApplicationContextInfoTest.findBean" />
-        <item itemvalue="JUnit.RateDiscountPolicyTest.discount" />
       </list>
     </recent_temporary>
   </component>
@@ -308,7 +291,7 @@
       <workItem from="1657278394603" duration="23037000" />
       <workItem from="1657549977435" duration="16654000" />
       <workItem from="1657638579518" duration="598000" />
-      <workItem from="1657674774935" duration="2263000" />
+      <workItem from="1657674774935" duration="23758000" />
     </task>
     <servers />
   </component>

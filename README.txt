@@ -681,13 +681,101 @@
  : 추가 구분자를 붙여주는 방법이다. 주입시 추가적인 방법을 제공하는 것이지 빈 이름을 변경하는 것은 아니다.
 
  - 사용 방법
+ [ componentScan ]
 	1. 중복된 빈이 생성되는 클래스에 @Qualifier("RateDiscountPolicy")
-				@Qualifier("FixDisocuntPolicy") 이런식으로 설정해준다.
+				@Qualifier("FixDisocuntPolicy") 이런식으로 작성해준다.
 	2. 해당 빈을 주입해주는 곳에 @Qualifier("RateDiscountPolicy") DiscountPolicy discounrPolicy
 	   와 같이 설정해준다.
 	=> 실행해보면 Qualifier을 보고 같은 Qualifier이 있는지 확인해보고 주입해준다.
 
 
- 3) @Primary
+ [ Bean ]
+	1. 중복된 빈이 생성되는 빈 생성자 부분에 @Qualifier("RateDiscountPolicy") 형태로 작성한다.
+	2. 나머지는 componentScan과 같은 방법
+
+ * 만약 같은 Qualifier를 못 찾는 예외가 발생하면 NoSuchBeanDefinition 예외가 발생
+
+
+
+ 3) @Primary ***
+ : 우선순위를 설정해준다.
+
+ @Component @Primary 해주면 해당하는 클래스파일이 빈 우선순위를 가진다.
+
+
+
+ ** 사용형태
+
+ : 메인 DB의 커넥션을 획득하는 스프링 빈은 @Primary를 이용하고, 서브 DB 커넥션 빈을 획득할때는 @Qualifier을 사용한다.
+
+
+ *** 주의 사항
+
+ : @Primary는 기본값처럼 사용하는 것이기 때문에 @Qualfier 이 우선순위를 가진다.
+
+
+
+
+ㅇ 도메인 모델 분석
+
+ 1) 회원-주문의 관계 : 회원은 여러번 주문할 수 있다.
+ 2) 주문-주문상품의 관계 : 주문할 때 여러 상품을 선택할 수 있으며, 여러 상품도 여러번 주문될 수 있다.
+
+	* 회원(1) - 주문(n) / 주문(1) - 주문상품(n) / 주문상품(n) - 상품(1)
+
+
+
+
+
+ㅇ 테이블 설계
+
+ 1) 회원 (Member)
+
+ - Member_Id
+ - name
+ - phoneNumber
+ - city
+ - zipcode (상품코드)
+ - grade
+ - createDate
+ - lastModifiedDate
+
+ 2) 주문 (Order)
+
+ - Order_Id
+ - Member_id
+ - OrderDate
+ - discountPrice(할인 가격)
+ - Status (주문상태)
+
+ 3) 주문상품 (OrderItem)
+
+ - Order_Id
+ - Order_Item_Id
+ - Item_Id
+ - OrderPrice
+ - Count
+
+ 4) 상품 (Item)
+
+ - Item_Id
+ - name
+ - price
+ - StockQuantity (상품재고)
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
