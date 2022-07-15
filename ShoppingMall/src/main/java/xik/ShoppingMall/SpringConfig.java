@@ -18,22 +18,22 @@ import javax.swing.*;
 @Configuration
 public class SpringConfig {
 
-//    private final MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
-//    @Autowired
-//    public SpringConfig(MemberRepository memberRepository){
-//        this.memberRepository = memberRepository;
-//    }
+    @Autowired
+    public SpringConfig(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
+    }
 
     @Bean
     public MemberServiceInterface memberService() {
-        return new MemberServiceImp(memberRepository());
+        return new MemberServiceImp(memberRepository);
     }
 
-    @Bean
-    public MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
-    }
+//    @Bean
+//    public MemberRepository memberRepository() {
+//        return new MemoryMemberRepository();
+//    }
 
     @Bean
     public DiscountPolicy discountPolicy() {
@@ -42,7 +42,7 @@ public class SpringConfig {
 
     @Bean
     public OrderService orderService() {
-        return new OrderServiceImp(memberRepository(), discountPolicy());
+        return new OrderServiceImp(memberRepository, discountPolicy());
     }
 
 

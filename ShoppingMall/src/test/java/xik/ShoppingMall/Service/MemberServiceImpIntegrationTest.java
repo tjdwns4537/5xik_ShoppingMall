@@ -19,11 +19,12 @@ class MemberServiceImpIntegrationTest {
 
     @Autowired
     MemberRepository memberRepository;
+
     @Autowired
     MemberServiceInterface memberService;
 
     @Test
-    //@Commit
+    @Commit
     void join() {
         //given
         Member member = new Member();

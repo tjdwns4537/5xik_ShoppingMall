@@ -1,5 +1,6 @@
 package xik.ShoppingMall.Repository;
 
+import org.springframework.stereotype.Repository;
 import xik.ShoppingMall.Domain.Grade;
 import xik.ShoppingMall.Domain.Member;
 

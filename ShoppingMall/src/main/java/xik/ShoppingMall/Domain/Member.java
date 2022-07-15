@@ -6,7 +6,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Member {
@@ -17,9 +19,12 @@ public class Member {
     @Column(name="MEMBER_ID")
     private Long id; // 시스템에 저장하기 위해 시스템이 정하는 변수
 
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
+
     @Getter
     @Setter
-    @Column(name="NAME")
+    @Column(name = "NAME")
     private String name; // 고객이 입력한 데이터
 
     @Getter
@@ -40,5 +45,9 @@ public class Member {
 
     private LocalDate createDate;
     private LocalDateTime lastModifiedDate;
+
+    public Member(){
+
+    }
 
 }

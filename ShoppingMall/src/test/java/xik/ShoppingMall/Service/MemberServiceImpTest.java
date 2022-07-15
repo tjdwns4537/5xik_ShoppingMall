@@ -18,6 +18,7 @@ class MemberServiceImpTest {
     @BeforeEach
     public void beforeEach() {
         memberRepository = new MemoryMemberRepository();
+        //memberServiceImp = new MemberServiceImp(memberRepository);
         memberServiceImp = new MemberServiceImp(memberRepository);
     }
 

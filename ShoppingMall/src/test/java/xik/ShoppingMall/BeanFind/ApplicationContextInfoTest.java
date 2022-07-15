@@ -4,10 +4,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import xik.ShoppingMall.AutoSpringConfig;
 import xik.ShoppingMall.SpringConfig;
 
 public class ApplicationContextInfoTest {
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfig.class);
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoSpringConfig.class);
 
     @Test
     @DisplayName("모든 빈 출력하기")

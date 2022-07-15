@@ -15,12 +15,8 @@ import java.util.List;
 @Controller
 public class MemberController {
 
-    private final MemberServiceInterface memberService;
-
     @Autowired
-    public MemberController(MemberServiceInterface memberService) {
-        this.memberService = memberService;
-    }
+    private MemberServiceInterface memberService;
 
     @GetMapping("/login")
     public String Login() {

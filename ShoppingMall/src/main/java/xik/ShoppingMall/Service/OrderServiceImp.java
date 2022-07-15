@@ -22,10 +22,10 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
-    public Order createOrder(Long MemberId,int price) {
+    public Order createOrder(Long MemberId,Integer price) {
         Member member = memberRepository.findByid(MemberId).get();
         int discountPrice = discountPolicy.discount(member,price);
 
-        return new Order(MemberId, discountPrice);
+        return new Order(discountPrice);
     }
 }
