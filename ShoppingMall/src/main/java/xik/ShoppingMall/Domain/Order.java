@@ -17,6 +17,17 @@ public class Order {
 
     @Getter
     @Setter
+    @Column(name = "ITEM_NAME")
+    private String itemname;
+
+    public void setMember(Member member) {
+        this.member = member;
+
+        member.getOrders().add(this);
+    }
+
+    // 연관관계 주인
+    @Getter
     @ManyToOne
     @JoinColumn(name="MEMBER_ID")
     private Member member;
@@ -40,6 +51,7 @@ public class Order {
     public Order() {
 
     }
+
 
     @Override
     public String toString() {

@@ -28,26 +28,25 @@ public class jpaRepositoryTest {
             em.persist(membertest);
 
             Order order = new Order();
+            order.setItemname("반팔티");
             order.setMember(membertest);
-            Order order2 = new Order();
-            order2.setMember(membertest);
-
-
             em.persist(order);
+
+            Order order2 = new Order();
+            order2.setItemname("긴팔티");
+            order2.setMember(membertest);
+            em.persist(order2);
+
+            //order1,order2 를 각각 persist 해줘야 회원의 상품 주문을 뭘 했는지 알 수 있다.
 
             em.flush();
             em.clear();
 
             Member findMember = em.find(Member.class, membertest.getId());
 
-            Order findOrder = em.find(Order.class, order.getId());
-
-            System.out.println("findOrder" + findOrder.getDiscountPrice());
-            System.out.println("findOrder" + findMember.getName());
-
-            List<Order> orders = findOrder.getMember();
-            for(Order i : membertest){
-
+            List<Order> orders = findMember.getOrders();
+            for(Order i : orders){
+                System.out.println("m : " + i.getItemname());
             }
             tx.commit();
 
