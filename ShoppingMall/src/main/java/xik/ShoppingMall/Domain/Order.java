@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="ORDERS")
@@ -15,19 +17,9 @@ public class Order {
     @Column(name = "ORDER_ID")
     private Long id;
 
-    @Getter
-    @Setter
-    @Column(name = "ITEM_NAME")
-    private String itemname;
-
-    public void setMember(Member member) {
-        this.member = member;
-
-        member.getOrders().add(this);
-    }
-
     // 연관관계 주인
     @Getter
+    @Setter
     @ManyToOne
     @JoinColumn(name="MEMBER_ID")
     private Member member;
@@ -44,6 +36,15 @@ public class Order {
     @Setter
     private OrderStatus status;
 
+    @Getter
+    @Setter
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems = new ArrayList<>();
+
+    @Getter
+    @Setter
+    private String Itemname;
+
     public Order(Integer discountPrice) {
         this.discountPrice = discountPrice;
     }
@@ -52,6 +53,10 @@ public class Order {
 
     }
 
+    public void addOrderItem(OrderItem orderItem) {
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+    }
 
     @Override
     public String toString() {

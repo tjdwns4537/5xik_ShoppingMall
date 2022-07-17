@@ -2,6 +2,7 @@ package xik.ShoppingMall.Repository;
 
 import xik.ShoppingMall.Domain.Member;
 import xik.ShoppingMall.Domain.Order;
+import xik.ShoppingMall.Domain.OrderItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -39,15 +40,34 @@ public class jpaRepositoryTest {
 
             //order1,order2 를 각각 persist 해줘야 회원의 상품 주문을 뭘 했는지 알 수 있다.
 
+            OrderItem orderItem = new OrderItem();
+            orderItem.setOrderPrice(30000);
+            orderItem.setCount(3);
+            orderItem.setOrder(order);
+            em.persist(orderItem);
+
+            OrderItem orderItem2 = new OrderItem();
+            orderItem2.setOrderPrice(50000);
+            orderItem2.setCount(1);
+            orderItem2.setOrder(order);
+            em.persist(orderItem2);
+
             em.flush();
             em.clear();
 
             Member findMember = em.find(Member.class, membertest.getId());
+            Order findOrder = em.find(Order.class, order.getOrderItems());
 
             List<Order> orders = findMember.getOrders();
             for(Order i : orders){
-                System.out.println("m : " + i.getItemname());
+                System.out.println("Member : " + i.getItemname());
             }
+
+            List<OrderItem> orderItems = findOrder.getOrderItems();
+            for(OrderItem i : orderItems){
+                System.out.println("OrderItem : " + i.getOrderPrice());
+            }
+
             tx.commit();
 
         } catch(Exception e){

@@ -21,13 +21,15 @@ public class OrderItem {
 
     @Getter
     @Setter
-    @Column(name="ORDER_ID")
-    private Long order_id;
+    @ManyToOne
+    @JoinColumn(name="ORDER_ID")
+    private Order order;
 
     @Getter
     @Setter
-    @Column(name="ITEM")
-    private Long item_id;
+    @ManyToOne
+    @JoinColumn(name="ITEM_ID")
+    private Item item;
 
     @Getter
     @Setter

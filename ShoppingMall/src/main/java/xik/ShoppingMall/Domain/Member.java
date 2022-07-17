@@ -19,12 +19,6 @@ public class Member {
     @Column(name="MEMBER_ID")
     private Long id; // 시스템에 저장하기 위해 시스템이 정하는 변수
 
-    // 읽기전용
-    @Getter
-    @Setter
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
-
     @Getter
     @Setter
     @Column(name = "NAME")
