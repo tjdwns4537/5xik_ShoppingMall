@@ -6,6 +6,7 @@
         <class>xik.ShoppingMall.Domain.Order</class>
         <class>xik.ShoppingMall.Domain.OrderItem</class>
         <class>xik.ShoppingMall.Domain.Item</class>
+        <class>xik.ShoppingMall.Domain.Outer</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>

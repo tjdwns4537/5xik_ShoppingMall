@@ -6,18 +6,18 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn
 public class Item {
 
     public Item() {
 
     }
 
-    @Getter
-    @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ITEM_ID")
-    private Long item_id;
+    private Long id;
 
     @Getter
     @Setter
@@ -32,5 +32,11 @@ public class Item {
     @Getter
     @Setter
     @Column(name="ITEM_STOCKQUANTITY")
-    private Integer sotckQuantity;
+    private Integer stockQuantity;
+
+    public void setItemList(String itemName, Integer price, Integer stockQuantity) {
+        this.name = itemName;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
 }

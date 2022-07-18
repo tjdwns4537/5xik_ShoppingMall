@@ -41,10 +41,6 @@ public class Order {
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @Getter
-    @Setter
-    private String Itemname;
-
     public Order(Integer discountPrice) {
         this.discountPrice = discountPrice;
     }

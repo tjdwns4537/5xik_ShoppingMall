@@ -732,7 +732,13 @@
  	* 개념 : 하나의 회원이 여러 상품을 주문하는 관계
 
  * 회원 -> 어떤 상품을 주문했는지 주문확인 필요 ( 역방향 필요 )
- * 회원은 주문 목록을 보고 상품을 찾기 때문에 Order , OrderItem은 양방향 관계를 하는 것이 맞다.
+ : 회원은 주문 목록을 보고 상품을 찾기 때문에 Order , OrderItem은 양방향 관계를 하는 것이 맞다.
+
+ * Member -> order : 회원 id 전달
+ * Order -> OrderItem : 주문 id 전달
+ * Item -> OrderItem : 상품명, 상품가격, 상품Id 전달
+ * 그렇다면 OrderItem의 역할 : Item에게서 상품명과 가격 / Order에게서 회원id와 주문id 전달 받음
+   그러면 전달받은 회원id에게 주문id에 item에게서 전달받은 상품명과 가격을 할당해준다.
 
 
 ㅇ 테이블 설계
@@ -772,6 +778,10 @@
  - StockQuantity (상품재고)
 
 
+
+ ㅇ 구현해야되는 과제
+
+ 1) Item에 ItemList를 통해 DB에 데이터를 넣었다.
 
 
 

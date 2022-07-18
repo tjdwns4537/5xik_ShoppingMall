@@ -1,14 +1,11 @@
 package xik.ShoppingMall.Repository;
 
-import xik.ShoppingMall.Domain.Member;
-import xik.ShoppingMall.Domain.Order;
-import xik.ShoppingMall.Domain.OrderItem;
+import xik.ShoppingMall.Domain.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.List;
 
 public class jpaRepositoryTest {
 
@@ -23,50 +20,63 @@ public class jpaRepositoryTest {
         tx.begin();
 
         try{
-            Member membertest = new Member();
-            membertest.setName("parksung");
-            membertest.setPhoneNumber("01074724537");
-            em.persist(membertest);
+//            Member membertest = new Member();
+//            membertest.setName("parksungjun");
+//            membertest.setPhoneNumber("01074724537");
+//            membertest.setGrade(Grade.VIP);
+//            membertest.setZipcode("거제도");
+//            em.persist(membertest);
 
-            Order order = new Order();
-            order.setItemname("반팔티");
-            order.setMember(membertest);
-            em.persist(order);
+            Outer outer = new Outer();
+            outer.setName("morphin");
+            outer.setGardigan("2022SS");
+            outer.setPrice(30000);
+            outer.setStockQuantity(5);
 
-            Order order2 = new Order();
-            order2.setItemname("긴팔티");
-            order2.setMember(membertest);
-            em.persist(order2);
+//            Item item = new Item();
+//            item.setItemList("B item", 40000,5);
 
-            //order1,order2 를 각각 persist 해줘야 회원의 상품 주문을 뭘 했는지 알 수 있다.
+//            Item item2 = new Item();
+//            item2.setItemList("B item", 40000,4);
+//
+//            Item item3 = new Item();
+//            item3.setItemList("C item", 50000,3);
+//
+//            Item item4 = new Item();
+//            item4.setItemList("D item", 10000,6);
+//
+//            Item item5 = new Item();
+//            item5.setItemList("E item", 20000,7);
 
-            OrderItem orderItem = new OrderItem();
-            orderItem.setOrderPrice(30000);
-            orderItem.setCount(3);
-            orderItem.setOrder(order);
-            em.persist(orderItem);
+            em.persist(outer);
+//            em.persist(item2);
+//            em.persist(item3);
+//            em.persist(item4);
+//            em.persist(item5);
 
-            OrderItem orderItem2 = new OrderItem();
-            orderItem2.setOrderPrice(50000);
-            orderItem2.setCount(1);
-            orderItem2.setOrder(order);
-            em.persist(orderItem2);
+//            Order order = new Order();
+//
+//            OrderItem orderItem = new OrderItem();
+//            orderItem.setItem(outer);
+//            orderItem.setOrder(order);
+            //outer = (Outer) orderItem.setCount(1,outer);
 
-            em.flush();
-            em.clear();
+//            em.persist(order);
+//            em.persist(orderItem);
+//
+//            System.out.println("할인된 가격 : "+order.getDiscountPrice());
+//            System.out.println("주문된 상품 : "+orderItem.getItem().getName());
+//            System.out.println("상품 재고 : "+outer.getStockQuantity());
 
-            Member findMember = em.find(Member.class, membertest.getId());
-            Order findOrder = em.find(Order.class, order.getOrderItems());
+            em.flush(); // 영속성 컨텍스트에 있는것 다 날리고
+            em.clear(); // 영속성 컨텍스트 제거
 
-            List<Order> orders = findMember.getOrders();
-            for(Order i : orders){
-                System.out.println("Member : " + i.getItemname());
-            }
-
-            List<OrderItem> orderItems = findOrder.getOrderItems();
-            for(OrderItem i : orderItems){
-                System.out.println("OrderItem : " + i.getOrderPrice());
-            }
+//            Order findOrder = em.find(Order.class, order.getOrderItems());
+//
+//            List<OrderItem> orderItems = findOrder.getOrderItems();
+//            for(OrderItem i : orderItems){
+//                System.out.println("OrderItem : " + i.getOrderPrice());
+//            }
 
             tx.commit();
 
