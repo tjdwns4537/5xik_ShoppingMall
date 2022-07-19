@@ -28,7 +28,7 @@ public class JDBCMemberRepository implements MemberRepository{
             pstmt = conn.prepareStatement(sql,
                     Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, member.getName());
-            pstmt.setString(2, member.getPhoneNumber());
+            pstmt.setString(2, member.getPhonenumber());
             pstmt.executeUpdate();
             rs = pstmt.getGeneratedKeys();
             if (rs.next()) {
@@ -59,7 +59,7 @@ public class JDBCMemberRepository implements MemberRepository{
                 Member member = new Member();
                 member.setId(rs.getLong("id"));
                 member.setName(rs.getString("name"));
-                member.setPhoneNumber(rs.getString("phoneNumber"));
+                member.setPhonenumber(rs.getString("phoneNumber"));
                 return Optional.of(member);
             } else {
                 return Optional.empty();
@@ -122,7 +122,7 @@ public class JDBCMemberRepository implements MemberRepository{
     }
 
     @Override
-    public List<Member> findall() {
+    public List<Member> findAll() {
         String sql = "select * from member";
         Connection conn = null;
         PreparedStatement pstmt = null;

@@ -35,7 +35,7 @@ public class MemberServiceImp implements MemberServiceInterface{
 
     @Override
     public void validateDuplicateMember(Member member) {
-        Optional<Member> result = memberRepository.findByphonenumber(member.getPhoneNumber());
+        Optional<Member> result = memberRepository.findByphonenumber(member.getPhonenumber());
         result.ifPresent(m ->{
             throw new IllegalStateException("이미 가입된 휴대폰 번호입니다.");
         });
@@ -43,7 +43,7 @@ public class MemberServiceImp implements MemberServiceInterface{
 
     @Override
     public List<Member> findMember() {
-        return memberRepository.findall();
+        return memberRepository.findAll();
     }
 
     @Override

@@ -30,7 +30,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
         jdbcInsert.withTableName("member").usingGeneratedKeyColumns("id");
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("name", member.getName());
-        parameters.put("phoneNumber", member.getPhoneNumber());
+        parameters.put("phoneNumber", member.getPhonenumber());
         Number key = jdbcInsert.executeAndReturnKey(new
                 MapSqlParameterSource(parameters));
         member.setId(key.longValue());
@@ -57,7 +57,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
       }
 
     @Override
-    public List<Member> findall() {
+    public List<Member> findAll() {
         return jdbcTemplate.query("select * from member", memberRowMapper());
     }
 

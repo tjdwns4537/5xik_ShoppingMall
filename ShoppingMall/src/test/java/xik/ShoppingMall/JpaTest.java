@@ -26,7 +26,7 @@ public class JpaTest{
         try{
             Member membertest = new Member();
             membertest.setName("parksung");
-            membertest.setPhoneNumber("01074724537");
+            membertest.setPhonenumber("01074724537");
 
             em.persist(membertest);
             Member findMember1 = em.find(Member.class, 1L);

@@ -22,12 +22,12 @@ public class Member {
     @Getter
     @Setter
     @Column(name = "NAME")
-    private String name; // 고객이 입력한 데이터
+    private String name; // 고객이 입한 데이터
 
     @Getter
     @Setter
     @Column(name="PHONENUMBER")
-    private String phoneNumber; // 휴대폰 번호
+    private String phonenumber; // 휴대폰 번호
 
     @Getter
     @Setter
@@ -40,8 +40,8 @@ public class Member {
     @Column(name = "ZIPCODE")
     private String zipcode;
 
-    private LocalDate createDate;
-    private LocalDateTime lastModifiedDate;
+//    private LocalDate createDate;
+//    private LocalDateTime lastModifiedDate;
 
     public Member(){
 

@@ -10,6 +10,8 @@ import xik.ShoppingMall.Domain.Grade;
 import xik.ShoppingMall.Domain.Member;
 import xik.ShoppingMall.Repository.MemberRepository;
 
+import javax.persistence.Column;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -24,12 +26,11 @@ class MemberServiceImpIntegrationTest {
     MemberServiceInterface memberService;
 
     @Test
-    @Commit
     void join() {
         //given
         Member member = new Member();
         member.setName("parksungjun");
-        member.setPhoneNumber("010-7472-4537");
+        member.setPhonenumber("010-7472-4537");
         member.setGrade(Grade.BASIC);
 
         //when
@@ -46,8 +47,8 @@ class MemberServiceImpIntegrationTest {
         Member mem1 = new Member();
         Member mem2 = new Member();
 
-        mem1.setPhoneNumber("010-7472-4537");
-        mem2.setPhoneNumber("010-7472-4537");
+        mem1.setPhonenumber("010-7472-4537");
+        mem2.setPhonenumber("010-7472-4537");
 
         //when
         memberService.join(mem1);

@@ -15,8 +15,12 @@ import java.util.List;
 @Controller
 public class MemberController {
 
-    @Autowired
     private MemberServiceInterface memberService;
+
+    @Autowired
+    public MemberController(MemberServiceInterface memberService) {
+        this.memberService = memberService;
+    }
 
     @GetMapping("/login")
     public String Login() {
@@ -25,14 +29,14 @@ public class MemberController {
 
     @GetMapping("/new")
     public String New() {
-        return "/Login/memberNew";
+        return "/Login/signup";
     }
 
-    @PostMapping("/new")
+    @PostMapping("/signup")
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
-        member.setPhoneNumber(form.getPhoneNumber());
+        member.setPhonenumber(form.getPhoneNumber());
 
         memberService.join(member);
 

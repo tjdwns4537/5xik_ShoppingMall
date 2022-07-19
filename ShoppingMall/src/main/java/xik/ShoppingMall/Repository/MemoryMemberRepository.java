@@ -7,7 +7,6 @@ import xik.ShoppingMall.Domain.Member;
 
 import java.util.*;
 
-@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>(); // 임시 저장히기위한 변수
@@ -35,12 +34,12 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public Optional<Member> findByphonenumber(String phoneNumber) {
         return store.values().stream()
-                .filter(member -> member.getPhoneNumber().equals(phoneNumber))
+                .filter(member -> member.getPhonenumber().equals(phoneNumber))
                 .findAny();
     }
 
     @Override
-    public List<Member> findall() {
+    public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
 

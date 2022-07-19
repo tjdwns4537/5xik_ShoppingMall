@@ -13,5 +13,5 @@ public interface MemberRepository {
     Optional<Member> findByname(String name); // 저장소에서 name 찾기
     Optional<Member> findByphonenumber(String phoneNumber); // 저장소에서 name 찾기
 
-    List<Member> findall(); // 저장소에서 전체목록 찾기
+    List<Member> findAll(); // 저장소에서 전체목록 찾기
 }
