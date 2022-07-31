@@ -3,6 +3,7 @@ package xik.ShoppingMall.Repository;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import xik.ShoppingMall.Domain.Member;
 
+import javax.persistence.EntityTransaction;
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
@@ -42,6 +43,11 @@ public class JDBCMemberRepository implements MemberRepository{
         } finally {
             close(conn, pstmt, rs);
         }
+    }
+
+    @Override
+    public EntityTransaction getTx() {
+        return null;
     }
 
     @Override

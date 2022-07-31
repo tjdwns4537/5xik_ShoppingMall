@@ -5,6 +5,7 @@ import xik.ShoppingMall.Domain.Grade;
 import xik.ShoppingMall.Domain.Member;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +21,11 @@ public class JpaMemberRepository implements MemberRepository{
     public Member save(Member member) {
         em.persist(member);
         return member;
+    }
+
+    @Override
+    public EntityTransaction getTx() {
+        return null;
     }
 
     @Override

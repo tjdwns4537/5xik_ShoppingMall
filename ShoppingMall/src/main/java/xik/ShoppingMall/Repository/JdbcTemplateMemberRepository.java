@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import xik.ShoppingMall.Domain.Member;
 
+import javax.persistence.EntityTransaction;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,6 +37,11 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
         member.setId(key.longValue());
         return member;
 
+    }
+
+    @Override
+    public EntityTransaction getTx() {
+        return null;
     }
 
     @Override

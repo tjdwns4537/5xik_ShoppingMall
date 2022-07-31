@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import xik.ShoppingMall.Domain.Member;
 
+import javax.persistence.EntityTransaction;
 import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository{
@@ -17,6 +18,11 @@ public class MemoryMemberRepository implements MemberRepository{
         member.setId(++sequence);
         store.put(member.getId(), member);
         return member;
+    }
+
+    @Override
+    public EntityTransaction getTx() {
+        return null;
     }
 
     @Override

@@ -17,10 +17,10 @@ public class MemberController {
 
     private MemberServiceInterface memberService;
 
-    @Autowired
-    public MemberController(MemberServiceInterface memberService) {
-        this.memberService = memberService;
-    }
+    //@Autowired
+//    public MemberController(MemberServiceInterface memberService) {
+//        this.memberService = memberService;
+//    }
 
     @GetMapping("/login")
     public String Login() {

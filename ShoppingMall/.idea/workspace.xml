@@ -5,19 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae6557bc-483b-4881-9eea-f905d3d5c57b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/Image/m_icon_check_disable.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/Image/m_icon_check_enable.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/Image/m_icon_danger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/Image/m_icon_normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/Image/m_icon_not_use.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/Image/m_icon_pass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/Image/m_icon_safe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/new_main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Order/OrderSystem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/EntitnyMangerCreate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JPQLMemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/xik/ddl/TestQuery.ddl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/xik/ShoppingMall/Repository/JPQLMemberRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JDBCMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JDBCMemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JpaMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/JpaMemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/MemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/MemoryMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/MemoryMemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xik/ShoppingMall/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/templates/Login/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/Login/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JDBCMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JDBCMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JdbcTemplateMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JpaMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/JpaMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemoryMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/MemoryMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Repository/SpringDataJpaMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/Service/MemberServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xik/ShoppingMall/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Login/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Login/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,12 +98,12 @@
       <list>
         <option value="CSS File" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="package-info" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -156,6 +169,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="xik.ShoppingMall.Repository" />
       <recent name="xik.ShoppingMall.SingleTon" />
       <recent name="xik.ShoppingMall.Discount" />
       <recent name="xik.ShoppingMall.Service" />
@@ -164,9 +178,9 @@
       <recent name="xik.ShoppingMall.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ShoppingMallApplication">
-    <configuration name="jpaRepositoryTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Repository.jpaRepositoryTest" />
+  <component name="RunManager" selected="JUnit.JPQLMemberRepositoryTest">
+    <configuration name="JPQLMemberRepository" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Repository.JPQLMemberRepository" />
       <module name="ShoppingMall.main" />
       <extension name="coverage">
         <pattern>
@@ -178,32 +192,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationContextInfoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JPQLMemberRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoppingMall.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="xik.ShoppingMall.BeanFind.*" />
+          <option name="PATTERN" value="xik.ShoppingMall.Repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="xik.ShoppingMall.BeanFind" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.BeanFind.ApplicationContextInfoTest" />
+      <option name="PACKAGE_NAME" value="xik.ShoppingMall.Repository" />
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Repository.JPQLMemberRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationContextInfoTest.findBean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JPQLMemberRepositoryTest.insertData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ShoppingMall.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="xik.ShoppingMall.BeanFind.*" />
+          <option name="PATTERN" value="xik.ShoppingMall.Repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="xik.ShoppingMall.BeanFind" />
-      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.BeanFind.ApplicationContextInfoTest" />
-      <option name="METHOD_NAME" value="findBean" />
+      <option name="PACKAGE_NAME" value="xik.ShoppingMall.Repository" />
+      <option name="MAIN_CLASS_NAME" value="xik.ShoppingMall.Repository.JPQLMemberRepositoryTest" />
+      <option name="METHOD_NAME" value="insertData" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -249,11 +263,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JPQLMemberRepositoryTest" />
+        <item itemvalue="Application.JPQLMemberRepository" />
+        <item itemvalue="JUnit.JPQLMemberRepositoryTest.insertData" />
         <item itemvalue="JUnit.MemberServiceImpIntegrationTest.join" />
         <item itemvalue="JUnit.MemberServiceImpIntegrationTest" />
-        <item itemvalue="Application.jpaRepositoryTest" />
-        <item itemvalue="JUnit.ApplicationContextInfoTest.findBean" />
-        <item itemvalue="JUnit.ApplicationContextInfoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +300,13 @@
       <workItem from="1657549977435" duration="16654000" />
       <workItem from="1657638579518" duration="598000" />
       <workItem from="1657674774935" duration="67203000" />
-      <workItem from="1658212718034" duration="13154000" />
+      <workItem from="1658212718034" duration="13327000" />
+      <workItem from="1658317470533" duration="680000" />
+      <workItem from="1658815913034" duration="619000" />
+      <workItem from="1658912462420" duration="244000" />
+      <workItem from="1658993898967" duration="227000" />
+      <workItem from="1659006023267" duration="18097000" />
+      <workItem from="1659239812453" duration="5437000" />
     </task>
     <servers />
   </component>
