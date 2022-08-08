@@ -29,19 +29,13 @@ public class Member {
     @Column(name="PHONENUMBER")
     private String phonenumber; // 휴대폰 번호
 
-    @Getter
-    @Setter
-    @Enumerated(EnumType.STRING)
-    @Column(name="GRADE")
-    private Grade grade;
+    @Getter @Setter
+    @Embedded
+    private Address address;
 
-    @Setter
-    @Getter
-    @Column(name = "ZIPCODE")
-    private String zipcode;
-
-//    private LocalDate createDate;
-//    private LocalDateTime lastModifiedDate;
+    @Getter @Setter
+    @Embedded
+    private WorkPeriod workPeriod;
 
     public Member(){
 

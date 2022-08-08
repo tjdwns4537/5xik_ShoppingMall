@@ -23,8 +23,8 @@ public class jpaRepositoryTest {
             Member membertest = new Member();
             membertest.setName("parksungjun");
             membertest.setPhonenumber("01074724537");
-            membertest.setGrade(Grade.VIP);
-            membertest.setZipcode("거제도");
+//            membertest.setGrade(Grade.VIP);
+//            membertest.setZipcode("거제도");
             em.persist(membertest);
 
 //            Outer outer = new Outer();

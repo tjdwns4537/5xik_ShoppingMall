@@ -8,27 +8,27 @@ import xik.ShoppingMall.Domain.Member;
 import java.util.List;
 
 public class MemoryMemberRepositoryTest {
-//    MemoryMemberRepository memberRepository = new MemoryMemberRepository();
-//
-//    // Test 후 해당 테스트의 데이터가 남지 않게 지워주기위한 함수
-//    // 역할 : Test 끝날때마다 afterEach 가 실행되어 memberRepository를 지워줌
-//    @AfterEach
-//    public void afterEach() {
-//        memberRepository.clearStore();
-//    }
-//
-//    @Test
-//    public void save() {
-//        Member member = new Member();
-//        member.setName("sungjun");
-//
-//        memberRepository.save(member);
-//
-//        Member result = memberRepository.findByid(member.getId()).get();
-//
-//        //Assertions.assertEquals(member, result);
-//        Assertions.assertThat(member).isEqualTo(result);
-//    }
+    MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+
+    // Test 후 해당 테스트의 데이터가 남지 않게 지워주기위한 함수
+    // 역할 : Test 끝날때마다 afterEach 가 실행되어 memberRepository를 지워줌
+    @AfterEach
+    public void afterEach() {
+        memberRepository.clearStore();
+    }
+
+    @Test
+    public void save() {
+        Member member = new Member();
+        member.setName("sungjun");
+
+        memberRepository.save(member);
+
+        Member result = memberRepository.findByid(member.getId()).get();
+
+        //Assertions.assertEquals(member, result);
+        Assertions.assertThat(member).isEqualTo(result);
+    }
 //
 //    @Test
 //    public void findByName() {

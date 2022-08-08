@@ -26,19 +26,20 @@ class MemberServiceImpIntegrationTest {
     MemberServiceInterface memberService;
 
     @Test
+    @Commit
     void join() {
         //given
         Member member = new Member();
         member.setName("parksungjun");
         member.setPhonenumber("010-7472-4537");
-        member.setGrade(Grade.BASIC);
+//        member.setGrade(Grade.BASIC);
 
         //when
         Long saveId = memberService.join(member);
 
         //then
-        Member result = memberService.findOne(saveId).get();
-        Assertions.assertThat(member.getName()).isEqualTo(result.getName());
+//        Member result = memberService.findOne(saveId).get();
+//        Assertions.assertThat(member.getName()).isEqualTo(result.getName());
     }
 
     @Test

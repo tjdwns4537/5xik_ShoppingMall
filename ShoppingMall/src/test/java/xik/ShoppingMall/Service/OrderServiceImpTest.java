@@ -33,13 +33,13 @@ public class OrderServiceImpTest {
         Member member1 = new Member();
         member1.setName("ParkJJJ");
         member1.setPhonenumber("01099992111");
-        member1.setGrade(Grade.BASIC);
+//        member1.setGrade(Grade.BASIC);
         memberService.join(member1);
 
         Member member2 = new Member();
         member2.setName("GOOMMOO");
         member2.setPhonenumber("01133334444");
-        member2.setGrade(Grade.VIP);
+//        member2.setGrade(Grade.VIP);
         memberService.join(member2);
 
         //when

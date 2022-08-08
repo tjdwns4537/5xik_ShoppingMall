@@ -32,10 +32,25 @@ public class SpringConfig {
 //        return emf;
 //    }
     //em을 빈등록 해준다.
+
+    @Bean
+    public EntityManagerFactory getEmf() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("5xik");
+        return emf;
+    }
+
     @Bean
     public EntityManager getEm() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("5xik");
-        return emf.createEntityManager();
+        EntityManagerFactory emf = getEmf();
+        EntityManager em = emf.createEntityManager();
+        return em;
+    }
+
+    @Bean
+    public EntityTransaction getTx() {
+        EntityManager em = getEm();
+        EntityTransaction tx = em.getTransaction();
+        return tx;
     }
 
     @Bean
@@ -45,7 +60,7 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        return new JPQLMemberRepository(getEm());
+        return new JPQLMemberRepository(getEmf(),getEm(),getTx());
     }
 
     @Bean

@@ -8,7 +8,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 import xik.ShoppingMall.AutoSpringConfig;
+import xik.ShoppingMall.Domain.Address;
 import xik.ShoppingMall.Domain.Member;
+import xik.ShoppingMall.Domain.WorkPeriod;
 import xik.ShoppingMall.SpringConfig;
 
 import javax.persistence.*;
@@ -24,24 +26,13 @@ class JPQLMemberRepositoryTest {
     MemberRepository repository;
 
     @Test
+    @Commit
     void insertData() {
-        //tx.begin();
-        try{
-            Member member = new Member();
-            member.setName("sungjun");
-            member.setPhonenumber("010");
-
-            repository.save(member);
-            Member result =  repository.findByname(member.getName()).get();
-
-            Assertions.assertThat(result).isEqualTo(member);
-            //tx.commit();
-
-        } catch (Exception e){
-            //tx.rollback();
-        } finally {
-            //repository.emClose();
-        }
-        //ac.close();
+        Member member = new Member();
+        member.setName("test");
+        member.setPhonenumber("01011");
+        member.setAddress(new Address("city","street","10000"));
+        member.setWorkPeriod(new WorkPeriod());
+        Member save = repository.save(member);
     }
 }

@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import xik.ShoppingMall.Domain.Address;
 import xik.ShoppingMall.Domain.Member;
+import xik.ShoppingMall.Domain.WorkPeriod;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -17,19 +19,33 @@ import java.util.Optional;
 @Transactional
 public class JPQLMemberRepository implements MemberRepository{
 
+    private EntityManagerFactory emf;
     private EntityManager em;
+    private EntityTransaction tx;
 
     @Autowired
-    public JPQLMemberRepository(EntityManager em) {
+    public JPQLMemberRepository(EntityManagerFactory emf, EntityManager em, EntityTransaction tx) {
+        this.emf = emf;
         this.em = em;
+        this.tx = tx;
     }
 
     public EntityTransaction getTx() {
-        return em.getTransaction();
+        return tx;
     }
 
+    @Override
     public Member save(Member member) {
-        em.persist(member);
+        tx.begin();
+        try {
+            em.persist(member);
+            tx.commit();
+        } catch (Exception e) {
+            tx.rollback();
+        } finally {
+            //em.close();
+        }
+        //mf.close();
         return member;
     }
 

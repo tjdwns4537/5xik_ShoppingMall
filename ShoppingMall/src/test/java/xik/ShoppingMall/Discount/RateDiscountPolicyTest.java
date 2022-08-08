@@ -40,7 +40,7 @@ class RateDiscountPolicyTest {
         Member member = new Member();
         member.setName("hooper");
         member.setPhonenumber("013440");
-        member.setGrade(Grade.VIP);
+//        member.setGrade(Grade.VIP);
         memberService.join(member);
         //when
         Order order = orderService.createOrder(member.getId(),30000);
